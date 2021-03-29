@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
-# PRUEBA PABLO ANTON ZAPATA ASCENCIO
-# PARA DESARROLLADOR REACT NATIVE TRAINEE NUTRIALUS
+## PRUEBA PABLO ANTON ZAPATA ASCENCIO
+## PARA DESARROLLADOR REACT NATIVE TRAINEE NUTRIALUS
+### (Si no se ven los estilos, instalar SASS con 'npm i node-sass')
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
