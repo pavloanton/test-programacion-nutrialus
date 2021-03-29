@@ -1,11 +1,11 @@
 import './App.css';
+import './styles.scss';
 import Contairner from './components/Container/Container';
 
 function App() {
   return (
     <div className="App">
-      Test de programación - Nutrialus | Pablo Zapata
-      <Contairner></Contairner>
+      <Contairner/>
     </div>
   );
 }

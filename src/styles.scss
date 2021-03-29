@@ -1,0 +1,397 @@
+// TODO : add icon buttons + btn groups
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+$black: #000000;
+$white: #FFFFFF;
+$whitesmoke: #F5F5F5;
+$grey: #777777;
+$grey-dark: #444444;
+$blue-grey: #3F4C5C;
+$blue: #4793FF;
+$green: #29C672;
+$orange: #FFAE47;
+$red: #FF4747;
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+	background: $whitesmoke;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-family: "Roboto Mono", sans-serif;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+	overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: blue-grey;
+	font-weight: 400;
+}
+
+.centered-container {
+	background: $white;
+	padding: 1rem 1.5rem;
+	border-radius: .125rem;
+	border: 1px solid rgba($black, .1);
+	box-shadow: 0 .125rem .25rem rgba($black, .04);
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+}
+
+.actions {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	margin: .25rem 0 1rem;
+}
+
+.actions-title {
+	display: block;
+	width: 100%;
+	margin: 0 0 .25rem;
+	color: $grey;
+}
+
+.actions-content {
+	display: flex;
+	flex-direction: row;
+}
+
+.btn {
+	position: relative;
+	display: inline-flex;
+	flex: 0 0 auto;
+	flex-direction: row;
+	justify-content: center;
+	align-self: center;
+	padding: 0 1.25rem;
+	line-height: 2.125rem;
+	font-size: .875rem;
+	font-weight: 400;
+	text-align: center;
+	margin: .125rem;
+	
+	border-radius: .125rem;
+	border: 2px solid $blue-grey;
+	background-color: $blue-grey;
+	color: $white;
+	text-decoration: none;
+	transition: color .125s ease;
+	overflow: hidden;
+	cursor: pointer;
+    vertical-align: middle;
+	outline: none;
+	
+	&:before {
+		background-color: $white;
+		content: "";
+		display: flex;
+		transform: scale(1, 0);
+		transition: transform .25s ease;
+		transform-origin: 50% 100%;
+		position: absolute;
+		overflow: hidden;
+		border-radius: 1px;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		//will-change: transform; //strange bug with right border
+		z-index: 0;
+	}
+	
+	span {
+		display: flex;
+		position: relative;
+		z-index: 1;
+	}
+	
+	.icon {
+		line-height: 2.125rem;
+		font-size: 1.25rem;
+		margin: 0 .25rem 0 -.25rem;
+	}
+	
+	&:hover, &:active, &:focus {
+		color: $blue-grey;
+		
+		&:before {
+			transform: scale(1, 1);
+		}
+	}
+	
+	&.block {
+		align-self: stretch;
+		width: 100%;
+		flex: 1 1 auto;
+	}
+	
+	&.bordered {
+		background-color: transparent!important;
+		color: $blue-grey;
+		
+		&:before {
+			background-color: $blue-grey;
+		}
+		
+		&:hover, &:active, &:focus {
+			color: $white;
+		}
+	}
+	
+	&.rounded {
+		border-radius: 1.1875rem;
+	}
+	
+	&.hard {
+		border-radius: 0;
+	}
+}
+
+.btn {
+	&.blue {
+		background-color: $blue;
+		border-color: $blue;
+		color: $white;
+		
+		&:hover, &:active, &:focus {
+			color: $blue;
+		}
+	
+		&.bordered {
+			color: $blue;
+			
+			&:before {
+				background-color: $blue;
+			}
+			
+			&:hover, &:active, &:focus {
+				color: $white;
+			}
+		}
+	}
+	
+	&.green {
+		background-color: $green;
+		border-color: $green;
+		
+		&:hover, &:active, &:focus {
+			color: $green;
+		}
+		
+		&.bordered {
+			color: $green;
+		
+			&:before {
+				background-color: $green;
+			}
+			
+			&:hover, &:active, &:focus {
+				color: $white;
+			}
+		}
+	}
+	
+	&.orange {
+		background-color: $orange;
+		border-color: $orange;
+		
+		&:hover, &:active, &:focus {
+			color: $orange;
+		}
+		
+		&.bordered {
+			color: $orange;
+		
+			&:before {
+				background-color: $orange;
+			}
+			
+			&:hover, &:active, &:focus {
+				color: $white;
+			}
+		}
+	}
+	
+	&.red {
+		background-color: $red;
+		border-color: $red;
+		
+		&:hover, &:active, &:focus {
+			color: $red;
+		}
+		
+		&.bordered {
+			color: $red;
+		
+			&:before {
+				background-color: $red;
+			}
+			
+			&:hover, &:active, &:focus {
+				color: $white;
+			}
+		}
+	}
+}
+
+body {
+	background-color: #1F2E3B;
+	font-family: "Roboto", helvetica, arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+  }
+  
+  div.table-title {
+	 display: block;
+	margin: auto;
+	max-width: 600px;
+	padding:5px;
+	width: 100%;
+  }
+  
+  .table-title h3 {
+	 color: #fafafa;
+	 font-size: 30px;
+	 font-weight: 400;
+	 font-style:normal;
+	 font-family: "Roboto", helvetica, arial, sans-serif;
+	 text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+	 text-transform:uppercase;
+  }
+  
+  
+  /*** Table Styles **/
+  
+  .table-fill {
+	background: white;
+	border-radius:3px;
+	border-collapse: collapse;
+	height: 320px;
+	margin: auto;
+	max-width: 600px;
+	padding:5px;
+	width: 100%;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	animation: float 5s infinite;
+  }
+   
+  th {
+	color:#D5DDE5;;
+	background:#1b1e24;
+	border-bottom:4px solid #9ea7af;
+	border-right: 1px solid #343a45;
+	font-size:23px;
+	font-weight: 100;
+	padding:24px;
+	text-align:left;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	vertical-align:middle;
+  }
+  
+  th:first-child {
+	border-top-left-radius:3px;
+  }
+   
+  th:last-child {
+	border-top-right-radius:3px;
+	border-right:none;
+  }
+	
+  tr {
+	border-top: 1px solid #C1C3D1;
+	border-bottom-: 1px solid #C1C3D1;
+	color:#666B85;
+	font-size:16px;
+	font-weight:normal;
+	text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+  }
+   
+  tr:hover td {
+	background:#4E5066;
+	color:#FFFFFF;
+	border-top: 1px solid #22262e;
+  }
+   
+  tr:first-child {
+	border-top:none;
+  }
+  
+  tr:last-child {
+	border-bottom:none;
+  }
+   
+  tr:nth-child(odd) td {
+	background:#EBEBEB;
+  }
+   
+  tr:nth-child(odd):hover td {
+	background:#4E5066;
+  }
+  
+  tr:last-child td:first-child {
+	border-bottom-left-radius:3px;
+  }
+   
+  tr:last-child td:last-child {
+	border-bottom-right-radius:3px;
+  }
+   
+  td {
+	background:#FFFFFF;
+	padding:20px;
+	text-align:left;
+	vertical-align:middle;
+	font-weight:300;
+	font-size:18px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+	border-right: 1px solid #C1C3D1;
+  }
+  
+  td:last-child {
+	border-right: 0px;
+  }
+  
+  th.text-left {
+	text-align: left;
+  }
+  
+  th.text-center {
+	text-align: center;
+  }
+  
+  th.text-right {
+	text-align: right;
+  }
+  
+  td.text-left {
+	text-align: left;
+  }
+  
+  td.text-center {
+	text-align: center;
+  }
+  
+  td.text-right {
+	text-align: right;
+  }
+  

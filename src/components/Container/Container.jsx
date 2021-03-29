@@ -19,10 +19,10 @@ const Container = () => {
     console.log(posts);
 
     return (
-        <div id='FeedContainer'>
+        <div id='Container'>
             <Post post={posts}></Post>
         </div>
-    );
+      );
 };
 
 export default Container;
